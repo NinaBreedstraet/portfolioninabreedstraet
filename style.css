@@ -237,6 +237,10 @@ a {
     align-content: space-between;
 }
 
+.work #page{
+    padding-top: 120px;
+}
+
 .title {
     position: relative;
     display: inline-block;
