@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Avara';
-    src: url('./Avara-BoldItalic.otf') format('opentype');
+    src: url('./FT88-School.ttf') format('opentype');
 }
 
 @font-face {
@@ -8,18 +8,70 @@
     src: url('./arialnarrow.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'Italic';
+    src: url('./FT88-Italic.ttf') format('truetype');
+}
+
+
+
+.intro {
+    position: fixed;
+    font-family: 'Italic', sans-serif;
+    text-align: center;
+    font-size: 40px;
+    top: 330px;
+    right: 50px;
+    left: 50px;
+}
+
+.down {
+    scale: 6%;
+    margin-top: -300px;
+    transition: opacity 0.3s;
+}
+
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
 
 body {
-    background-color: #FF00D1;
+    background-color: whitesmoke;
     margin: 60px;
+}
+
+.contactgegevens {
+    font-family: 'Helvetica', sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: 13px;
+    top: 3px;
+}
+
+.contactgegevens p {
+    margin-left: 75px;
+}
+
+/*
+p,
+.contactgegevens {
+
+}*/
+
+h2 {
+    font-family: 'Italic', sans-serif;
+    font-size: 13px;
 }
 
 .header {
     position: fixed;
-    background-color: #FF00D1;
+    background-color: whitesmoke;
     top: 0;
-    height: 100px;
-    padding-top: 60px;
+    height: 112px;
+    padding-top: 80px;
     padding-bottom: 30px;
     display: flex;
     justify-content: space-between;
@@ -42,7 +94,8 @@ body {
 }
 
 .head {
-    width: 300px;
+    width: 700px;
+    font-size: large;
     text-align: left;
     font-family: 'Avara', serif;
 }
@@ -54,13 +107,13 @@ a {
 }
 
 .nav {
-    margin-left: 150px;
     width: 1200px;
 }
 
 
 .nav ul li {
     display: inline-block;
+    margin-left: 10px;
     font-family: 'Helvetica', sans-serif;
 }
 
@@ -78,23 +131,32 @@ a {
 }
 
 #sortLuca:hover {
-    color: #FF00D1;
-    cursor: url('luca-logo.png'), auto;
+    color: whitesmoke;
+    cursor: url('book.png'), auto;
 }
 
 #sortEhb:hover {
-    color: #FF00D1;
-    cursor: url('ehb.png'), auto;
+    color: whitesmoke;
+    cursor: url('laptop.png'), auto;
 }
 
 #realLife:hover {
-    color: #FF00D1;
-    cursor: url('real.png'), auto;
+    color: whitesmoke;
+    cursor: url('object.png'), auto;
 }
 
 #contact:hover {
-    color: #FF00D1;
+    color: whitesmoke;
     cursor: url('mail.png'), auto;
+}
+
+#introtekst {
+    transition: color 0.5s ease, filter 0.5s ease;
+}
+
+
+#introtekst:hover {
+    /* cursor: url('star.PNG'), auto;*/
 }
 
 .footer {
@@ -104,7 +166,7 @@ a {
     text-align: left;
     padding: 20px;
     width: 100%;
-    background-color: #FF00D1;
+    background-color: whitesmoke;
     color: white;
 }
 
@@ -168,7 +230,7 @@ a {
 }
 
 .work {
-    padding-top: 200px;
+    padding-top: 800px;
     display: inline-flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -212,8 +274,6 @@ a {
     /* Pas dit aan indien nodig */
 }
 
-
-
 #lettersE {
     width: 300px;
     top: 200px;
@@ -228,8 +288,6 @@ a {
     position: absolute;
 }
 
-
-
 #fahrenheit {
     /*background-color: orange;*/
     width: 450px;
@@ -237,7 +295,6 @@ a {
     left: 60px;
     position: relative;
 }
-
 
 #fahrenheitE {
     width: 200px;
@@ -279,11 +336,10 @@ a {
 
 #sjaal {
     position: relative;
-    /*background-color: rosybrown;*/
     width: 550px;
     height: 360px;
     top: 150px;
-    right: 100px;
+    /*right: 100px;*/
 }
 
 #sjaalE {
