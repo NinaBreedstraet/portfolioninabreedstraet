@@ -5,47 +5,169 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Nina Breedstraet</title>
 </head>
 
 <body>
     <div class="work">
+        <div class="title" id="intmotion">
+            <video class="imgBlur" id="intE" width="320" height="320" controls>
+                <source src="./EHB/Iteratie1.mp4" type="video/mp4">
+            </video>
+            <video class="imgBlur" id="intT" width="480" height="270" controls>
+                <source src="./EHB/Iteratie2.mp4" type="video/mp4">
+            </video>
+            <video class="imgBlur" id="intD" width="480" height="270" controls>
+                <source src="./EHB/Iteratie3.mp4" type="video/mp4">
+            </video>
+            <button class="knopjeInfo"><img class="info" src="./info.png" alt="info"></button>
+            <div class="content">
+                <p>
+                    Last year, I began studying Multimedia and Creative Technology at Erasmushogeschool Brussel. As part
+                    of a course called Interactive Motion, we learned to use TouchDesigner. The course culminated in two
+                    assignments, one of which involved creating a project inspired by another artist’s work. I chose
+                    Daydream by Valentine Maurice, an artist known for exploring the effects of light on mental health.
+                    In this particular project, she experiments with the interplay between light and water. For my
+                    project, I focused on recreating this interaction, experimenting with recreating light and water in
+                    TouchDesigner.
+                </p>
+            </div>
+        </div>
 
+        <div class="title" id="motion">
+            <video class="imgBlur" id="motionE" width="480" height="270" controls>
+                <source src="./EHB/Opdracht_lyrics.mp4" type="video/mp4">
+            </video>
+            <button class="knopjeInfo"><img class="info" src="./info.png" alt="info"></button>
+            <div class="content">
+                <p>
+                    Last year, I started a new study, diving deeper into various programs and techniques. This clip
+                    is an example of one of my first experiments with After Effects. It's a lyric video where I
+                    applied the new skills I acquired throughout the year. <br>
+                    <br>
+                    The song featured is "My Little Tony" by Bar Italia. Inspired by their album cover, which showcases
+                    stretched text, a color palette of gray, black, and yellow, and a grainy texture, I incorporated
+                    these elements into the video to create a cohesive and visually engaging piece.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="title" id="experience">
+            <video class="imgBlur" id="experienceE" width="480" height="270" controls>
+                <source src="./EHB/Experience_NinaBreedstaet_Clip2.mp4" type="video/mp4">
+            </video>
+            <button class="knopjeInfo"><img class="info" src="./info.png" alt="info"></button>
+            <div class="content">
+                <p>
+                    In my second year at Luca School of Arts I got the assignment to make a football scarf only
+                    using a
+                    limited amount of material.
+                </p>
+            </div>
+        </div>
     </div>
 
     <div class="header">
-        <button type="button" id="hoofd">
-            <a href="./index.html">
+        <button type="button" id="logo">
+            <a href="index.html">
                 <div class="head">
                     <h1>Hello!! <br> I'm Nina Breedstraet. <br> Here is my work 🤩</h1>
                 </div>
             </a>
         </button>
 
-
         <div class="nav">
             <ul>
-                <li><button class="button" type="button" id="sortLuca"><a href="./luca.html" id="sortLuca">Work of Luca
-                            School of Arts</a></button></li>
-                <li><button class="button" type="button" id="sortEhb"><a href="./ehb.html" id="sortEhb">Work of
-                            Erasmushogeschool</a></button></li>
-                <li><button class="button" type="button" id="realLife"><a href="./real.html" id="realLife">Work in real
-                            life
-                            ;)</a></button></li>
+                <li><button class="button" type="button" id="sortLuca"><a href="./luca.html"
+                            id="sortLuca">Publications</a></button></li>
+                <li><button class="button" type="button" id="sortEhb"><a href="./ehb.html"
+                            id="sortEhb">Digital</a></button></li>
+                <li><button class="button" type="button" id="realLife"><a href="./real.html"
+                            id="realLife">Objects</a></button></li>
                 <li><button class="button" type="button" id="contact"><a href="./contact.html"
                             id="contact">Contact</a></button>
                 </li>
             </ul>
         </div>
-    </div>
 
-    <footer class="footer">
-        <a href="https://www.instagram.com/n.breedstraet/"><img id="instagram" src="1161953_instagram_icon.svg"
-                alt="instagram logo"></a>
-    </footer>
+        <footer class="footer">
+            <a href="https://www.instagram.com/n.breedstraet/"><img id="instagram" src="1161953_instagram_icon.svg"
+                    alt="instagram logo"></a>
+        </footer>
 
 
 
 </body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        function toggleContentAndBlur(button) {
+            const parent = button.closest('.title');
+            const images = parent.querySelectorAll('.imgBlur');
+            const content = parent.querySelector('.content');
+
+            // Toggle blur effect
+            images.forEach(image => {
+                image.classList.toggle('blurred');
+            });
+
+            // Toggle content zichtbaarheid
+            content.classList.toggle('visible');
+        }
+
+        // Voeg event listeners toe aan alle info knoppen
+        const infoButtons = document.querySelectorAll('.knopjeInfo');
+        infoButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                toggleContentAndBlur(this);
+            });
+        });
+
+        // Specifieke functie voor de carousel
+        function toggleCarouselBlur() {
+            const carousel = document.querySelector('#hoofden');
+            const images = carousel.querySelectorAll('.carousel-images');
+            const content = carousel.querySelector('.content');
+
+            // Toggle blur effect
+            images.forEach(image => {
+                image.classList.toggle('blurred');
+            });
+
+            // Toggle content zichtbaarheid
+            content.classList.toggle('visible');
+        }
+
+        // Voeg een specifieke event listener toe voor de carousel info-knop
+        const carouselInfoButton = document.querySelector('#hoofden .knopjeInfo');
+        if (carouselInfoButton) {
+            carouselInfoButton.addEventListener('click', toggleCarouselBlur);
+        }
+
+        // Carousel functionaliteit
+        const list = document.querySelector(".list");
+        const item = document.querySelector(".slide");
+        const itemWidth = item.offsetWidth;
+
+        function handleClick(direction) {
+            if (direction === "previous") {
+                list.scrollBy({
+                    left: -itemWidth,
+                    behavior: "smooth"
+                });
+            } else {
+                list.scrollBy({
+                    left: itemWidth,
+                    behavior: "smooth"
+                });
+            }
+        }
+
+        // Voeg event listeners toe aan de carousel knoppen
+        document.querySelector('.buttop--previous').addEventListener('click', () => handleClick('previous'));
+        document.querySelector('.buttop--next').addEventListener('click', () => handleClick('next'));
+    });
+</script>
 
 </html>
