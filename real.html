@@ -5,31 +5,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Nina Breedstraet</title>
 </head>
 
 <body>
     <div class="work">
-        <div class="title" id="hekerock">
-            <div class="images">
-                <img id="hekerockE" src="./Images/LUCA/eeeeen.png" alt="hekerock">
-                <img id="hekerockT" src="./Images/LUCA/hekerock.jpg" alt="hekerock">
-            </div>
+        <div class="title" id="sjaal">
+            <img class="sjaalScale imgBlur" id="sjaalE" src="./LUCA/IMG_0896.jpg" alt="sjaal">
+            <img class="sjaalScale imgBlur" id="sjaalT" src="./LUCA/IMG_1989.jpg" alt="sjaal">
+            <img class="sjaalScale imgBlur" id="sjaalD" src="./LUCA/IMG_3659.png" alt="sjaal">
+            <button class="knopjeInfo"><img class="info" src="./info.png" alt="info"></button>
             <div class="content">
                 <p>
-                    This was one of my first assignments in the real world :). Chiro Hekeko always does a little contest
-                    for the graphic deisgn of their festival, so I submitted my design and won.
-                    Hekeko stands for Heverlee, Kessel-lo and Korbeeklo, so I used the geographical borders on the
-                    poster and gave them a 3D effect to let it pop out more. After coming up with this concept I just
-                    started playing with the lay-out and came up with this!
+                    In my second year at Luca School of Arts, we were tasked with designing a football scarf using a
+                    limited set of materials, themed around a sport of our choice. After researching the materials, I
+                    decided to create a scarf inspired by the board game Go. <br>
+                    <br>
+                    The contrast between the grid of the board and the round playing stones influenced my design. I drew
+                    further inspiration from a computer version of Go that highlights the best moves with gradient
+                    colors. I used these gradient colors throughout the rest of the scarf.
+                    These colors allowed key elements—such as the repeating "gogogogo" on the back and the white
+                    stone-like dots on the front—to stand out more clearly.
+                </p>
+            </div>
+        </div>
+
+        <div class="title" id="plaat">
+            <img class="imgBlur" id="plaatE" src="./LUCA/IMG_3652.png" alt="plaat">
+            <img class="imgBlur" id="plaatT" src="./LUCA/LPbackcover.png" alt="plaat">
+            <img class="imgBlur" id="plaatD" src="./LUCA/Vinyl.png" alt="plaat">
+            <button class="knopjeInfo"><img class="info" src="./info.png" alt="info"></button>
+            <div class="content">
+                <p>
+                    This assignment was from my first year at Luca School of Arts, where we were tasked with designing
+                    a vinyl cover for one of the albums from a provided list. I chose "Music for Commercials" by Yasuaki
+                    Shimizu, an album originally created for Japanese TV commercials.<br>
+                    <br>
+                    For inspiration, I delved into vintage Japanese commercials, which are known for their vibrant and
+                    colourful aesthetic. During my research, I also discovered tiny smiley faces in
+                    Japanese signage, which was a fun addition to my design. Overall, designing this
+                    vinyl was a fun experience, full of creativity and exploration.
                 </p>
             </div>
         </div>
     </div>
 
     <div class="header">
-        <button type="button" id="hoofd">
-            <a href="./index.html">
+        <button type="button" id="logo">
+            <a href="index.html">
                 <div class="head">
                     <h1>Hello!! <br> I'm Nina Breedstraet. <br> Here is my work 🤩</h1>
                 </div>
@@ -38,27 +61,95 @@
 
         <div class="nav">
             <ul>
-                <li><button class="button" type="button" id="sortLuca"><a href="./luca.html" id="sortLuca">Work of Luca
-                            School of Arts</a></button></li>
-                <li><button class="button" type="button" id="sortEhb"><a href="./ehb.html" id="sortEhb">Work of
-                            Erasmushogeschool</a></button></li>
-                <li><button class="button" type="button" id="realLife"><a href="./real.html" id="realLife">Work in real
-                            life
-                            ;)</a></button></li>
+                <li><button class="button" type="button" id="sortLuca"><a href="./luca.html"
+                            id="sortLuca">Publications</a></button></li>
+                <li><button class="button" type="button" id="sortEhb"><a href="./ehb.html"
+                            id="sortEhb">Digital</a></button></li>
+                <li><button class="button" type="button" id="realLife"><a href="./real.html"
+                            id="realLife">Objects</a></button></li>
                 <li><button class="button" type="button" id="contact"><a href="./contact.html"
                             id="contact">Contact</a></button>
                 </li>
             </ul>
         </div>
-    </div>
 
-    <footer class="footer">
-        <a href="https://www.instagram.com/n.breedstraet/"><img id="instagram" src="1161953_instagram_icon.svg"
-                alt="instagram logo"></a>
-    </footer>
+        <footer class="footer">
+            <a href="https://www.instagram.com/n.breedstraet/"><img id="instagram" src="1161953_instagram_icon.svg"
+                    alt="instagram logo"></a>
+        </footer>
 
 
 
 </body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        function toggleContentAndBlur(button) {
+            const parent = button.closest('.title');
+            const images = parent.querySelectorAll('.imgBlur');
+            const content = parent.querySelector('.content');
+
+            // Toggle blur effect
+            images.forEach(image => {
+                image.classList.toggle('blurred');
+            });
+
+            // Toggle content zichtbaarheid
+            content.classList.toggle('visible');
+        }
+
+        // Voeg event listeners toe aan alle info knoppen
+        const infoButtons = document.querySelectorAll('.knopjeInfo');
+        infoButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                toggleContentAndBlur(this);
+            });
+        });
+
+        // Specifieke functie voor de carousel
+        function toggleCarouselBlur() {
+            const carousel = document.querySelector('#hoofden');
+            const images = carousel.querySelectorAll('.carousel-images');
+            const content = carousel.querySelector('.content');
+
+            // Toggle blur effect
+            images.forEach(image => {
+                image.classList.toggle('blurred');
+            });
+
+            // Toggle content zichtbaarheid
+            content.classList.toggle('visible');
+        }
+
+        // Voeg een specifieke event listener toe voor de carousel info-knop
+        const carouselInfoButton = document.querySelector('#hoofden .knopjeInfo');
+        if (carouselInfoButton) {
+            carouselInfoButton.addEventListener('click', toggleCarouselBlur);
+        }
+
+        // Carousel functionaliteit
+        const list = document.querySelector(".list");
+        const item = document.querySelector(".slide");
+        const itemWidth = item.offsetWidth;
+
+        function handleClick(direction) {
+            if (direction === "previous") {
+                list.scrollBy({
+                    left: -itemWidth,
+                    behavior: "smooth"
+                });
+            } else {
+                list.scrollBy({
+                    left: itemWidth,
+                    behavior: "smooth"
+                });
+            }
+        }
+
+        // Voeg event listeners toe aan de carousel knoppen
+        document.querySelector('.buttop--previous').addEventListener('click', () => handleClick('previous'));
+        document.querySelector('.buttop--next').addEventListener('click', () => handleClick('next'));
+    });
+</script>
 
 </html>
