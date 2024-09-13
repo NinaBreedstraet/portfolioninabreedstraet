@@ -229,16 +229,16 @@ a {
     /* Voeg een overgang toe voor een soepel effect */
 }
 
+.work .page{
+    padding-top: 120px;
+}
+
 .work {
     padding-top: 800px;
     display: inline-flex;
     flex-wrap: wrap;
     justify-content: center;
     align-content: space-between;
-}
-
-.work .page{
-    padding-top: 120px;
 }
 
 .title {
