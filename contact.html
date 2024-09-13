@@ -5,20 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Nina Breedstraet</title>
 </head>
 
 <body>
-    <div class="work"id="page">
-        <div id="contactgegevens">
-            <p>breedstraetnina@gmail.com</p>
-            <p></p>
+    <div class="work page">
+        <div class="contactgegevens">
+            <h2>Let's get to know each other!</h2>
+            <p>email address: breedstraetnina@gmail.com</p>
+            <p>personal instagram: <a href="https://www.instagram.com/ninabreedstraet/">@ninabreedstraet</a></p>
+            <p>graphic design instagram: <a href="https://www.instagram.com/n.breedstraet/">@n.breedstraet</a>
+            </p>
+            <p>linked-in: <a href="https://be.linkedin.com/in/nina-breedstraet-895a88236">Nina Breedstraet</a>
+            </p>
+
         </div>
     </div>
 
     <div class="header">
-        <button type="button" id="hoofd">
-            <a href="./index.html">
+        <button type="button" id="logo">
+            <a href="index.html">
                 <div class="head">
                     <h1>Hello!! <br> I'm Nina Breedstraet. <br> Here is my work 🤩</h1>
                 </div>
@@ -27,27 +33,95 @@
 
         <div class="nav">
             <ul>
-                <li><button class="button" type="button" id="sortLuca"><a href="./luca.html" id="sortLuca">Work of Luca
-                            School of Arts</a></button></li>
-                <li><button class="button" type="button" id="sortEhb"><a href="./ehb.html" id="sortEhb">Work of
-                            Erasmushogeschool</a></button></li>
-                <li><button class="button" type="button" id="realLife"><a href="./real.html" id="realLife">Work in real
-                            life
-                            ;)</a></button></li>
+                <li><button class="button" type="button" id="sortLuca"><a href="./luca.html"
+                            id="sortLuca">Publications</a></button></li>
+                <li><button class="button" type="button" id="sortEhb"><a href="./ehb.html"
+                            id="sortEhb">Digital</a></button></li>
+                <li><button class="button" type="button" id="realLife"><a href="./real.html"
+                            id="realLife">Objects</a></button></li>
                 <li><button class="button" type="button" id="contact"><a href="./contact.html"
                             id="contact">Contact</a></button>
                 </li>
             </ul>
         </div>
-    </div>
 
-    <footer class="footer">
-        <a href="https://www.instagram.com/n.breedstraet/"><img id="instagram" src="1161953_instagram_icon.svg"
-                alt="instagram logo"></a>
-    </footer>
+        <footer class="footer">
+            <a href="https://www.instagram.com/n.breedstraet/"><img id="instagram" src="1161953_instagram_icon.svg"
+                    alt="instagram logo"></a>
+        </footer>
 
 
 
 </body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        function toggleContentAndBlur(button) {
+            const parent = button.closest('.title');
+            const images = parent.querySelectorAll('.imgBlur');
+            const content = parent.querySelector('.content');
+
+            // Toggle blur effect
+            images.forEach(image => {
+                image.classList.toggle('blurred');
+            });
+
+            // Toggle content zichtbaarheid
+            content.classList.toggle('visible');
+        }
+
+        // Voeg event listeners toe aan alle info knoppen
+        const infoButtons = document.querySelectorAll('.knopjeInfo');
+        infoButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                toggleContentAndBlur(this);
+            });
+        });
+
+        // Specifieke functie voor de carousel
+        function toggleCarouselBlur() {
+            const carousel = document.querySelector('#hoofden');
+            const images = carousel.querySelectorAll('.carousel-images');
+            const content = carousel.querySelector('.content');
+
+            // Toggle blur effect
+            images.forEach(image => {
+                image.classList.toggle('blurred');
+            });
+
+            // Toggle content zichtbaarheid
+            content.classList.toggle('visible');
+        }
+
+        // Voeg een specifieke event listener toe voor de carousel info-knop
+        const carouselInfoButton = document.querySelector('#hoofden .knopjeInfo');
+        if (carouselInfoButton) {
+            carouselInfoButton.addEventListener('click', toggleCarouselBlur);
+        }
+
+        // Carousel functionaliteit
+        const list = document.querySelector(".list");
+        const item = document.querySelector(".slide");
+        const itemWidth = item.offsetWidth;
+
+        function handleClick(direction) {
+            if (direction === "previous") {
+                list.scrollBy({
+                    left: -itemWidth,
+                    behavior: "smooth"
+                });
+            } else {
+                list.scrollBy({
+                    left: itemWidth,
+                    behavior: "smooth"
+                });
+            }
+        }
+
+        // Voeg event listeners toe aan de carousel knoppen
+        document.querySelector('.buttop--previous').addEventListener('click', () => handleClick('previous'));
+        document.querySelector('.buttop--next').addEventListener('click', () => handleClick('next'));
+    });
+</script>
 
 </html>
