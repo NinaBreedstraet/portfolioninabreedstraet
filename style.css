@@ -539,9 +539,8 @@ a {
 
 #roos {
     width: 330px;
-    top: -300px;
+    top: 0px;
     left: 100px;
-    position: absolute;
 }
 
 
