@@ -15,6 +15,8 @@
                 I'm a graphic, motion and digital designer and make websites, books, magazines, videos, scarfs,
                 vinyl-covers, ... I'm 23 years old, have a master of graphic design and study multimedia and creative
                 technology. <br> Welcome to my portfolio! </div>
+            <img class="imgBlur" id="roos" src="./LUCA/roosSmall.png" alt="lala">
+            <img class="imgBlur" id="masters3" src="./LUCA/masters3Small.png" alt="lala">
             <img src="./arrow-down.svg" class="horizontal-scrolling-items__item down" id="arrowDown" alt="down">
         </div>
         <div id="imagenina">
@@ -45,8 +47,8 @@
         </div>
 
         <div class="title" id="fahrenheit">
-            <img class="imgBlur" id="fahrenheitE" src="./LUCA/A0_PaginaE.jpeg" alt="fahrenheit">
-            <img class="imgBlur" id="fahrenheitT" src="./LUCA/A0_Pagina.jpeg" alt="fahrenheit">
+            <img class="imgBlur" id="fahrenheitE" src="./LUCA/A0_PaginaE.jpg" alt="fahrenheit">
+            <img class="imgBlur" id="fahrenheitT" src="./LUCA/A0_Pagina.jpg" alt="fahrenheit">
             <button class="knopjeInfo"><img class="info" src="./info.png" alt="info"></button>
             <div class="content">
                 <p>
@@ -76,7 +78,7 @@
 
         <div class="title" id="hekerock">
             <img class="imgBlur" id="hekerockE" src="./LUCA/eeeeen.png" alt="hekerock">
-            <img class="imgBlur" id="hekerockT" src="./LUCA/hekerock.jpeg" alt="hekerock">
+            <img class="imgBlur" id="hekerockT" src="./LUCA/hekerock.jpg" alt="hekerock">
             <button class="knopjeInfo"><img class="info" src="./info.png" alt="info"></button>
             <div class="content">
                 <p>
@@ -115,8 +117,8 @@
         </div>
 
         <div class="title" id="sjaal">
-            <img class="sjaalScale imgBlur" id="sjaalE" src="./LUCA/IMG_0896.jpeg" alt="sjaal">
-            <img class="sjaalScale imgBlur" id="sjaalT" src="./LUCA/IMG_1989.jpeg" alt="sjaal">
+            <img class="sjaalScale imgBlur" id="sjaalE" src="./LUCA/IMG_0896.png" alt="sjaal">
+            <img class="sjaalScale imgBlur" id="sjaalT" src="./LUCA/IMG_1989.png" alt="sjaal">
             <img class="sjaalScale imgBlur" id="sjaalD" src="./LUCA/IMG_3659.png" alt="sjaal">
             <button class="knopjeInfo"><img class="info" src="./info.png" alt="info"></button>
             <div class="content">
@@ -256,6 +258,42 @@
                 </p>
             </div>
         </div>
+
+        <div class="title" id="winx">
+            <img class="imgBlur" id="winx3" src="./LUCA/nina.png" alt="lala">
+            <img class="imgBlur" id="winx1" src="./LUCA/winx.png" alt="lala">
+            <img class="imgBlur" id="winx2" src="./LUCA/winx2.png" alt="lala">
+            <button class="knopjeInfo"><img class="info" src="./info.png" alt="info"></button>
+            <div class="content">
+                <p>
+                    During my master's year, we were given several open assignments. One of them was to create
+                    something for someone in the real world. I teamed up with my fellow student and close friend, Lisa
+                    Vande Velde, to design a scarf for our own 'club'.<br>
+                    <br>
+                    Inspired by the concept of scarves typically worn by football fans, we wanted to create something
+                    along similar lines. While brainstorming, we stumbled upon the idea of making a scarf for the Winx
+                    Club—a playful and nostalgic theme that resonated with us. This creative exploration led to the
+                    design of this fun and vibrant scarf.
+                </p>
+            </div>
+        </div>
+
+        <div class="title" id="masters">
+            <img class="imgBlur" id="masters2" src="./LUCA/masters2Small.png" alt="lala">
+            <img class="imgBlur" id="masters4" src="./LUCA/masters4Small.png" alt="lala">
+            <img class="imgBlur" id="masters5" src="./LUCA/PHOTO14.png" alt="lala">
+            <img class="imgBlur" id="masters6" src="./LUCA/Trouwen15Small.png" alt="lala">
+            <button class="knopjeInfo"><img class="info" src="./info.png" alt="info"></button>
+            <div class="content">
+                <p>
+                    This is my masters project, Juliet and Romeo. It was a research to the iconic story 'Romeo and
+                    Juliet'. In my masters thesis I wrote a story about Romeo and Juliet, in the story I researched and
+                    thought of how every element takes its place in today's society. When researching, I also looked at
+                    how this story was visualised, since there are a lot of versions of it. I layered them and
+                    created pictures where the romeos and juliets come out distorted.
+                </p>
+            </div>
+        </div>
     </div>
 
     <div class="header">
@@ -365,7 +403,7 @@
         var scrollPosition = window.scrollY; // Hoe ver je hebt gescrold
 
         if (scrollPosition > 100) {
-            introtekst.style.color = "DeepPink"; // Verander de kleur naar rood
+            introtekst.style.color = "Red"; // Verander de kleur naar rood
             introtekst.style.filter = "blur(" + (scrollPosition / 100) +
                 "px)"; // Verhoog de blur afhankelijk van scrollen
         } else {
@@ -376,6 +414,24 @@
 
     document.addEventListener('scroll', function () {
         let arrow = document.getElementById('arrowDown');
+        if (window.scrollY > 0) { // Check if scrolled down from the top
+            arrow.classList.add('hidden'); // Add the hidden class to hide the arrow
+        } else {
+            arrow.classList.remove('hidden'); // Remove the hidden class to show the arrow
+        }
+    });
+
+    document.addEventListener('scroll', function () {
+        let arrow = document.getElementById('roos');
+        if (window.scrollY > 0) { // Check if scrolled down from the top
+            arrow.classList.add('hidden'); // Add the hidden class to hide the arrow
+        } else {
+            arrow.classList.remove('hidden'); // Remove the hidden class to show the arrow
+        }
+    });
+
+    document.addEventListener('scroll', function () {
+        let arrow = document.getElementById('masters3');
         if (window.scrollY > 0) { // Check if scrolled down from the top
             arrow.classList.add('hidden'); // Add the hidden class to hide the arrow
         } else {
