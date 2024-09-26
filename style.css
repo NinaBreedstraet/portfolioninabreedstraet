@@ -542,6 +542,7 @@ a {
     top: 0px;
     bottom: 300px;
     left: 100px;
+    position: absolute;
 }
 
 
