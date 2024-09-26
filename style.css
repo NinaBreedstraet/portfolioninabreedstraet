@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Avara';
-    src: url('./FT88-School.ttf') format('truetype');
+    src: url('./FT88-School.ttf') format('opentype');
 }
 
 @font-face {
@@ -12,7 +12,6 @@
     font-family: 'Italic';
     src: url('./FT88-Italic.ttf') format('truetype');
 }
-
 
 
 .intro {
@@ -55,12 +54,6 @@ body {
     margin-left: 75px;
 }
 
-/*
-p,
-.contactgegevens {
-
-}*/
-
 h2 {
     font-family: 'Italic', sans-serif;
     font-size: 13px;
@@ -97,7 +90,7 @@ h2 {
     width: 700px;
     font-size: large;
     text-align: left;
-    font-family: 'Avara', serif;
+    font-family: 'Italic', serif;
 }
 
 a {
@@ -154,9 +147,15 @@ a {
     transition: color 0.5s ease, filter 0.5s ease;
 }
 
-
-#introtekst:hover {
-    /* cursor: url('star.PNG'), auto;*/
+.knopjeInfo {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    width: 60px;
+    border: none;
+    border-radius: 50%;
+    background-color: inherit;
+    cursor: pointer;
 }
 
 .footer {
@@ -172,17 +171,6 @@ a {
 
 #instagram {
     width: 2%;
-}
-
-.knopjeInfo {
-    position: absolute;
-    top: 0px;
-    right: 10px;
-    width: 60px;
-    border: none;
-    border-radius: 50%;
-    background-color: inherit;
-    cursor: pointer;
 }
 
 .imgBlur {
@@ -349,29 +337,29 @@ a {
 
 #sjaal {
     position: relative;
-    width: 550px;
+    width: 700px;
     height: 360px;
     top: 150px;
     /*right: 100px;*/
 }
 
 #sjaalE {
-    width: 200px;
+    width: 250px;
     top: 10px;
-    left: 10px;
+    left: -20px;
     position: absolute;
 }
 
 #sjaalT {
-    width: 200px;
-    top: 100px;
-    left: 140px;
+    width: 250px;
+    top: -90px;
+    left: 100px;
     position: absolute;
 }
 
 #sjaalD {
     top: 90px;
-    left: 300px;
+    left: 320px;
     transform: scale(3);
     position: absolute;
 }
@@ -477,6 +465,86 @@ a {
     left: 30px;
 }
 
+#winx {
+    position: relative;
+    top: 200px;
+    left: 5px;
+    bottom: 100px;
+    right: 60px;
+    width: 710px;
+    height: 550px;
+}
+
+#winx1 {
+    width: 400px;
+    left: 150px;
+    position: absolute;
+}
+
+#winx2 {
+    width: 400px;
+    left: 10px;
+    position: absolute;
+}
+
+#winx3 {
+    width: 250px;
+    left: 400px;
+    position: absolute;
+}
+
+#masters {
+    position: relative;
+    top: 200px;
+    left: 5px;
+    bottom: 100px;
+    right: 60px;
+    width: 1200px;
+    height: 550px;
+}
+
+#masters2 {
+    width: 700px;
+    top: 60px;
+    left: 330px;
+    position: absolute;
+}
+
+#masters4 {
+    width: 400px;
+    left: 10px;
+    position: absolute;
+}
+
+#masters5 {
+    width: 140px;
+    left: 1000px;
+    top: 30px;
+    position: absolute;
+}
+
+#masters6 {
+    width: 140px;
+    left: 1000px;
+    top: 250px;
+    position: absolute;
+}
+
+#masters3 {
+    width: 200px;
+    top: 220px;
+    left: 1100px;
+    position: absolute;
+}
+
+#roos {
+    width: 330px;
+    top: -220px;
+    left: 100px;
+    position: absolute;
+}
+
+
 #intmotion {
     position: relative;
     width: 1350px;
@@ -506,6 +574,7 @@ a {
     position: relative;
     top: 200px;
 }
+
 
 .buttop {
     position: absolute;
